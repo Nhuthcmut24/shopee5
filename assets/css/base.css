@@ -7,6 +7,12 @@
     --nav-height:38px;
     --header-with-search-height:calc(var(--main__header-height) - var(--nav-height));
 }
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+.main {
+    overflow: hidden;
+}
 *{
     box-sizing: inherit;
 }

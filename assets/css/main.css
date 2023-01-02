@@ -11,32 +11,28 @@
     left: 0;
     right: 0;
     justify-content: space-around;
-    height: 48px;
+   
     border-top: 1px solid #efefef;
     border-bottom: 1px solid #efefef;
     box-shadow: -2px 4px 8px rgba(0,0,0,0.06);
-    z-index: 0;
-
+    z-index: 2;
 }
 .header-with-search__logo-link {
     display: block;
 }
-.mobile-search:hover {
-    cursor: pointer;
-}
+
 .header-with-search__search--mobile {
-    position: absolute;
+    position: fixed;
     top: var(--main__header-height);
     left: 0;
-    width: 100%;
-    z-index: 1;
+    right: 0;
     animation: fadeInSearch linear 0.3s;
     height: 42px;
     background-color: var(--white-color);
     border-radius: 2px;
     display: none;
     align-items: center;
-    z-index: 10;
+    z-index: 100;
 
 }
 @keyframes fadeInSearch {
@@ -59,15 +55,19 @@
     flex:1;
     position: relative;
 }
+.main__header-sort-item .main__header-sort-link--actived {
+    border-bottom: 1px solid var(--primary-color);
+}
 .main__header-sort-item::before {
     content: "";
     position: absolute;
-    height: 60%;
+    height: 30%;
     top: 50%;
     transform: translateY(-50%);
     border-left: 1px solid #d8d8d8;
     left: 0;
 }
+
 .mobile-search,
 .mobile-menu {
     display: none;
@@ -79,11 +79,13 @@
 .mobile-menu-icon {
     color:var(--white-color);
     font-size: 2rem;
+    display: none !important;
    
 }
+
 .mobile-search {
-    padding: 0 10px;
-    margin-left: 14px;
+    padding: 0 10px 0 0;
+    margin-left: 18px;
 
 }
 .mobile-search-icon {
@@ -96,11 +98,12 @@
     text-decoration: none;
     color: var(--text-color);
     font-size: 1.4rem;
-    padding: 16px 16px;
+    padding: 16px 10px;
     display: block;
     font-weight: 400;
     position: relative;
     text-align: center;
+    width: 100%;
 }
 .main__header-sort-link--actived {
     color: var(--primary-color);
@@ -116,7 +119,129 @@
 .main__header-sort-item:first-child .main__header-sort-link::after {
     display: none;
 }
+.nav-mobile-tablet {
+   margin-bottom: 8px;
+   margin-top: -14px;
+}
+.nav-mobile-tablet__list {
+    list-style: none;
+    display: flex;
+    max-width: 100%;
+    overflow-x: auto;
+}
+.nav-mobile-tablet__list::-webkit-scrollbar {
+    display: none;
+}
+.nav-mobile-tablet__item {
+    border-radius: 3px;
+    margin-right: 8px;
+    
+}
+.nav-mobile-tablet__item:nth-child(3n+1) {
+    background-color: #87AFD8;
 
+}
+.nav-mobile-tablet__item:nth-child(3n+2) {
+    background-color: #76C9BD;
+
+}
+.nav-mobile-tablet__item:nth-child(3n+3) {
+    background-color: #88CF81;
+
+}
+.nav-mobile-tablet__link {
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 1.2rem;
+    display: block;
+    width: 108px;
+    height: 40px;
+    text-align: center;
+    line-height: 2rem;
+    display:-webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-weight: 300;
+    overflow: hidden;
+    padding: 0 4px;
+}
+.nav-mobile-container {
+    min-width: 160px;
+    position: fixed ;
+    top: 0;
+    left: 0;
+    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.08);
+    animation: fadeInLeft ease-in 0.2s;
+    display:none;
+    z-index: 1000;
+}
+.mobile-menu-input:checked ~ .nav-mobile-container {
+    display: block;
+}
+.mobile-menu-icon-link {
+    margin-left: 12px;
+    padding: 2px;
+
+}
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0.3;
+
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.nav-mobile-container-input:checked ~ .nav-mobile-container {
+    display: block;
+}
+.mobile-nav-btn {
+    display: none;
+    margin-left: 6px;
+
+}
+.nav-mobile-heading {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    background-image: linear-gradient(#f6402d,#fe6333);
+    padding: 8px;
+    height: var(--main__header-height);
+}
+.nav-mobile-avt {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--primary-color);
+}
+.nav-mobile-user-name {
+    color: var(--white-color);
+    padding-left: 8px;
+    font-size: 1.4rem;
+
+}
+
+.nav-mobile-heading-body {
+    background-color: var(--white-color);
+    padding: 16px;
+    
+}
+.nav-mobile-category {
+    padding-bottom: 12px;
+    font-size: 1.5rem;
+}
+.nav-mobile-category-list {
+    list-style: none;
+
+}
+.nav-mobile-category-item {
+    padding: 8px 0;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+}
 .nav {
     display: flex;
     justify-content: space-between;
@@ -598,7 +723,7 @@
     padding: 0 8px;
 }
 .header-with-search__cart {
-    
+    -webkit-tap-highlight-color: transparent;
     text-align: center;
     margin-left: 48px;
     margin-right: 42px;
@@ -737,6 +862,7 @@
     position: relative;
     display: inline-block;
     padding: 0 8px;
+    -webkit-tap-highlight-color: transparent;
     
 }
 .header-with-search__cart-wrap:hover .header-with-search__cart-list {
@@ -760,8 +886,8 @@
     z-index: 2;
     max-height: 56vh;
     overflow-y:auto ;
-   
-
+    padding-left: 0;
+    
 }
 
 .header-with-search__cart-list--empty {
@@ -806,6 +932,7 @@
     position: relative;
     padding: 16px;
     cursor:pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 .cart-info__quantity {
     color: var(--primary-color);
@@ -839,6 +966,7 @@
     display: flex;
     padding: 8px 0;
     align-items: center;
+    margin-top: 6px;
 }
 .header-with-search__cart-item:hover {
     background-color: rgb(244, 244, 244);
@@ -885,7 +1013,7 @@
 
 }
 .header-with-search__cart-item-price-wrap {
-
+    margin-bottom: 16px;
 }
 
 .header-with-search__cart-item-price {
@@ -1117,6 +1245,7 @@
     position: relative;
     margin-top: 8px;
     margin: 0;
+    min-height: 349.667px;
 }
 .home-product__item-link {
     text-decoration: none;
@@ -1444,11 +1573,11 @@
 }
 .remove-icon-link {
     display: block;
-    padding: 16px 20px;
+    padding: 12px 18px;
     display: none;
-    margin-top: 8px;
     position: relative;
     top:8px;
+    margin-bottom: 14px;
 }
 .remove-icon-link:hover .remove-icon{
     color: var(--primary-color);

@@ -424,4 +424,9 @@
     }
 }
 
-
+@media (max-width: 46.1875em) {
+    .s-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
