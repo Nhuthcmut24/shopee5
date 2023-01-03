@@ -107,9 +107,7 @@
     }
 }
 /* Mobile */
-:root {
-    --main__header-height:54px;
-}
+
 @media (max-width:739px) {
     .hidden-on-mobile {
         display: none;
@@ -192,7 +190,7 @@
     padding: 0 16px;
   }
 .main__header {
-    height: var(--main__header-height);
+    height:54px;
 }
 .footer__heading,.footer-list__item-link {
     text-align: center;
@@ -210,5 +208,14 @@
 .footer-list__item-link {
     padding: 5px 0;
 }
-  
+.main__header-sort-bar {
+    top:54px;
+}
+
+.main__container {
+    margin-top: calc(54px + 48px);
+}
+.header-with-search__search--mobile {
+    top: 54px;
+}
 }
