@@ -217,5 +217,6 @@
 }
 .header-with-search__search--mobile {
     top: 54px;
+    height: 51px;
 }
 }
