@@ -105,6 +105,9 @@
         width: 110px;
         margin-top: 18px;
     }
+    .header-with-search__search-history {
+        width: 405px;
+    }
 }
 /* Mobile */
 
@@ -218,5 +221,20 @@
 .header-with-search__search--mobile {
     top: 54px;
     height: 51px;
+}
+.header-with-search-option__list {
+ padding: 0 4px;   
+}
+.header-with-search-option__item {
+    margin-left: 12px;
+}
+.header-with-search__search-history {
+    width: 100%;
+}
+.header-with-search__search-history {
+  top:107%;
+  
+
+
 }
 }

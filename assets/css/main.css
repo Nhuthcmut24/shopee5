@@ -706,6 +706,7 @@
     border-radius: 2px;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 .header-with-search__select {
     position: relative;
