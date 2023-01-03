@@ -54,9 +54,18 @@
     justify-content: center;
     flex:1;
     position: relative;
+    height: 48px;
+    align-items: center;
 }
-.main__header-sort-item .main__header-sort-link--actived {
-    border-bottom: 1px solid var(--primary-color);
+.main__header-sort-item .main__header-sort-link--actived::before
+ {
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 100%;
+    height: 0.5px;
+    background-color: var(--primary-color);
+    bottom: 0px;
 }
 .main__header-sort-item::before {
     content: "";
@@ -98,12 +107,14 @@
     text-decoration: none;
     color: var(--text-color);
     font-size: 1.4rem;
-    padding: 16px 10px;
+    padding: 0 10px;
     display: block;
     font-weight: 400;
     position: relative;
     text-align: center;
     width: 100%;
+    height: 100%;
+    line-height: 48px;
 }
 .main__header-sort-link--actived {
     color: var(--primary-color);
