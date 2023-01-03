@@ -233,8 +233,8 @@
 }
 .header-with-search__search-history {
   top:107%;
-  
-
-
+}
+.header-with-search__cart-list {
+    top: 54px;
 }
 }
